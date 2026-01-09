@@ -1,0 +1,2102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Klimate Komfort — Отопление, Кондиционирование, Вентиляция</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1a73e8;
+      --primary-dark: #0d47a1;
+      --accent: #ff6b35;
+      --light: #f9f9f9;
+      --dark: #333;
+      --gray: #666;
+      --light-gray: #eee;
+      --white: #fff;
+      --shadow: 0 4px 12px rgba(0,0,0,0.08);
+      --star-color: #ffc107;
+      --success: #28a745;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--dark);
+      background: var(--white);
+    }
+    
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+    /* Header */
+.header {
+  background: var(--white);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
+.header-logo {
+  font-family: 'Montserrat', 'Arial Black', sans-serif;
+  font-weight: 900;
+  font-size: 1.8rem;
+  color: var(--primary);
+  line-height: 1.1;
+  letter-spacing: 1px;
+  display: flex;
+  flex-direction: column;
+}
+.header-logo .logo-top {
+  font-size: 2rem;
+}
+.header-logo .logo-bottom {
+  font-size: 1.6rem;
+  color: var(--dark);
+}
+    .nav-menu ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+    .nav-menu a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 500;
+    }
+    .nav-menu a:hover {
+      color: var(--primary);
+    }
+    .header-contact {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .phone { font-weight: 600; color: var(--primary); }
+    .phone a, .contact-phone, .phone-link {
+      color: inherit;
+      text-decoration: none;
+    }
+    .phone a:hover, .phone-link:hover { text-decoration: underline; }
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+    .btn-secondary {
+      background: var(--accent);
+      color: white;
+    }
+    .btn-outline {
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      background: transparent;
+    }
+    .btn-outline:hover {
+      background: var(--primary);
+      color: white;
+    }
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #eef5ff 0%, #ffffff 100%);
+      padding: 80px 0;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--gray);
+      margin-bottom: 30px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-features {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+      margin: 30px 0;
+    }
+    .feature-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      max-width: 160px;
+    }
+    .feature-item i {
+      font-size: 1.8rem;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+    .hero-buttons {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    /* Sections */
+    section {
+      padding: 80px 0;
+    }
+    h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+    }
+    .section-subtitle {
+      text-align: center;
+      color: var(--gray);
+      margin-bottom: 50px;
+      font-size: 1.1rem;
+    }
+    /* Для планшетов и телефонов */
+@media (max-width: 992px) {
+  .nav-menu ul {
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+  }
+  
+  .nav-menu a {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+  }
+}
+
+/* Для телефонов */
+@media (max-width: 768px) {
+  .header .container {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .nav-menu {
+    order: 3;
+    width: 100%;
+    margin-top: 15px;
+  }
+  
+  .nav-menu ul {
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  .nav-menu a {
+    font-size: 0.85rem;
+    padding: 5px 8px;
+  }
+  
+  .header-contact {
+    margin-left: auto;
+  }
+}
+
+/* Для очень маленьких телефонов */
+@media (max-width: 480px) {
+  .nav-menu ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  
+  .nav-menu li {
+    text-align: center;
+  }
+  
+  .nav-menu a {
+    display: block;
+    padding: 8px 5px;
+    font-size: 0.8rem;
+    border: 1px solid var(--light-gray);
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .header-contact {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-end;
+  }
+  
+  .header-contact .btn {
+    font-size: 0.8rem;
+    padding: 8px 12px;
+  }
+}
+    /* Services */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    .service-card {
+      background: var(--white);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+    .service-icon {
+      width: 70px;
+      height: 70px;
+      background: rgba(26, 115, 232, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      color: var(--primary);
+      font-size: 2rem;
+    }
+    /* Portfolio */
+    .portfolio-filters {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .filter-btn {
+      background: white;
+      border: 2px solid var(--light-gray);
+      padding: 8px 16px;
+      margin: 0 5px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .filter-btn.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 25px;
+    }
+    .portfolio-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    
+    /* Masters Section - ПЕРЕПИСАНО НА КАРУСЕЛЬ */
+    .masters-section {
+      background: linear-gradient(135deg, #f8fafc 0%, #eef2f7 100%);
+      padding: 80px 0;
+    }
+    
+    .masters-carousel-wrapper {
+      position: relative;
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 0 60px;
+    }
+    
+    .masters-carousel {
+      overflow: hidden;
+      border-radius: 20px;
+      background: white;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    }
+    
+    .masters-carousel-track {
+      display: flex;
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: transform;
+    }
+    
+    .carousel-slide {
+      flex: 0 0 100%;
+      display: flex;
+      padding: 30px;
+      gap: 30px;
+      min-height: 500px;
+      box-sizing: border-box;
+    }
+    
+    /* Карточка мастера в карусели */
+    .master-card-carousel {
+      flex: 1;
+      min-width: 0;
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .master-card-carousel:hover {
+      transform: translateY(-10px);
+      border-color: var(--primary);
+      box-shadow: 0 15px 35px rgba(26, 115, 232, 0.15);
+    }
+    
+    .master-avatar {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-bottom: 25px;
+      border: 5px solid rgba(26, 115, 232, 0.2);
+      background: white;
+    }
+    
+    .master-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .master-card-carousel h3 {
+      margin: 0 0 10px;
+      color: var(--dark);
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    
+    .master-specialty {
+      color: var(--primary);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      padding: 8px 20px;
+      background: rgba(26, 115, 232, 0.1);
+      border-radius: 50px;
+      display: inline-block;
+    }
+    
+    .master-rating-container {
+      margin: 15px 0;
+    }
+    
+    .master-rating {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    
+    .rating-value {
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--dark);
+      margin-left: 10px;
+    }
+    
+    .review-count {
+      color: var(--gray);
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+    
+    .master-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+      margin: 20px 0;
+    }
+    
+    .master-card-carousel .btn {
+      width: 100%;
+      padding: 12px;
+      font-size: 0.95rem;
+      border-radius: 10px;
+    }
+    
+    .master-phone {
+      margin-top: auto;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+      width: 100%;
+    }
+    
+    .phone-link {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+    
+    .phone-link:hover {
+      color: #1a73e8;
+      text-decoration: underline;
+    }
+    
+    /* Кнопки навигации карусели */
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: white;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      font-size: 1.4rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      z-index: 10;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .carousel-btn:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-50%) scale(1.1);
+      box-shadow: 0 8px 25px rgba(26, 115, 232, 0.3);
+    }
+    
+    .carousel-btn:active {
+      transform: translateY(-50%) scale(0.95);
+    }
+    
+    .carousel-btn-prev {
+      left: 0;
+    }
+    
+    .carousel-btn-next {
+      right: 0;
+    }
+    
+    /* Точки-индикаторы */
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 40px;
+    }
+    
+    .carousel-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #ddd;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+    
+    .carousel-dot.active {
+      background: var(--primary);
+      transform: scale(1.3);
+      border-color: rgba(26, 115, 232, 0.2);
+    }
+    
+    .carousel-dot:hover {
+      background: rgba(26, 115, 232, 0.3);
+      transform: scale(1.1);
+    }
+    
+    /* Анимация загрузки */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .master-card-carousel {
+      animation: fadeIn 0.6s ease forwards;
+    }
+    
+    .master-card-carousel:nth-child(2) {
+      animation-delay: 0.1s;
+    }
+    
+    .master-card-carousel:nth-child(3) {
+      animation-delay: 0.2s;
+    }
+    
+    /* Адаптивность карусели */
+    @media (max-width: 1200px) {
+      .masters-carousel-wrapper {
+        padding: 0 50px;
+      }
+      
+      .carousel-slide {
+        gap: 20px;
+        padding: 20px;
+      }
+    }
+    
+    @media (max-width: 992px) {
+      .master-card-carousel {
+        padding: 25px;
+      }
+      
+      .master-avatar {
+        width: 120px;
+        height: 120px;
+      }
+      
+      .carousel-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .masters-carousel-wrapper {
+        padding: 0 40px;
+      }
+      
+      .carousel-slide {
+        flex-direction: column;
+        gap: 30px;
+        min-height: auto;
+      }
+      
+      .master-card-carousel {
+        max-width: 400px;
+        margin: 0 auto;
+      }
+      
+      .carousel-btn {
+        width: 45px;
+        height: 45px;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .masters-carousel-wrapper {
+        padding: 0 20px;
+      }
+      
+      .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+      }
+      
+      .carousel-dots {
+        margin-top: 30px;
+      }
+    }
+    
+    /* Modal */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-backdrop.active {
+      display: flex;
+    }
+    .modal-content {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 600px;
+      width: 90%;
+      position: relative;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: var(--gray);
+    }
+    
+    /* Review Form Styles */
+    .add-review-form {
+      background: rgba(26, 115, 232, 0.05);
+      border-radius: 10px;
+      padding: 25px;
+      margin-bottom: 30px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: var(--dark);
+    }
+    .form-input, .form-textarea {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid var(--light-gray);
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.3s;
+    }
+    .form-input:focus, .form-textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1);
+    }
+    .form-textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    
+    /* Review Stars */
+    .form-rating {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .form-stars {
+      display: flex;
+      gap: 5px;
+    }
+    .form-star {
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: #ddd;
+      transition: color 0.2s;
+    }
+    .form-star:hover,
+    .form-star.hovered {
+      color: var(--star-color);
+    }
+    .form-star.active {
+      color: var(--star-color);
+    }
+    .form-rating-label {
+      font-size: 1rem;
+      color: var(--gray);
+    }
+    
+    /* Reviews Section */
+    .reviews-section {
+      background: var(--white);
+      border-radius: 15px;
+      padding: 30px;
+      margin-top: 30px;
+      box-shadow: var(--shadow);
+    }
+    .reviews-title {
+      font-size: 1.5rem;
+      margin-bottom: 25px;
+      color: var(--primary);
+      border-bottom: 2px solid var(--light-gray);
+      padding-bottom: 10px;
+    }
+    .reviews-list {
+      max-height: 400px;
+      overflow-y: auto;
+      padding-right: 10px;
+    }
+    .review-item {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      border: 1px solid var(--light-gray);
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    }
+    .review-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .review-author {
+      font-weight: 600;
+      color: var(--dark);
+    }
+    .review-date {
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+    .review-rating {
+      color: var(--star-color);
+      margin: 5px 0;
+    }
+    .review-text {
+      color: var(--dark);
+      line-height: 1.5;
+      margin-top: 10px;
+    }
+    .no-reviews {
+      text-align: center;
+      color: var(--gray);
+      padding: 40px 20px;
+      font-style: italic;
+    }
+    
+    /* Success Message */
+    .success-message {
+      background: #d4edda;
+      color: #155724;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 15px 0;
+      display: none;
+      border: 1px solid #c3e6cb;
+    }
+    .success-message.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    /* Footer */
+    .footer {
+      background: var(--dark);
+      color: white;
+      padding: 50px 0 0;
+    }
+    .footer .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 30px;
+    }
+    .footer-logo img {
+      height: 35px;
+      margin-bottom: 10px;
+    }
+    .footer-links a,
+    .footer-social a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .footer-social {
+      display: flex;
+      gap: 15px;
+      font-size: 1.5rem;
+    }
+    .footer-bottom {
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      margin-top: 30px;
+    }
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      .hero-buttons, .hero-features { flex-direction: column; align-items: center; }
+      .footer .container { grid-template-columns: 1fr; text-align: center; }
+      .masters-grid {
+        grid-template-columns: 1fr;
+      }
+      .reviews-section {
+        padding: 20px;
+      }
+      .master-stats {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+    /* ===== АДАПТИВНОСТЬ ДЛЯ ТЕЛЕФОНОВ ===== */
+
+/* Для телефонов (до 768px) */
+@media (max-width: 768px) {
+  /* 1. УБИРАЕМ ФИКСИРОВАННЫЙ ХЕДЕР */
+  .header {
+    position: static !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  /* Убираем отступ для hero */
+  .hero {
+    margin-top: 0 !important;
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+  
+  /* Перестраиваем структуру хедера */
+  .header .container {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px 0;
+  }
+  
+  /* Логотип и контакты в одну строку */
+  .header-logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .header-contact {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .phone {
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+  
+  /* Меню делаем в сетке */
+  .nav-menu {
+    width: 100%;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+  }
+  
+  .nav-menu ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    text-align: center;
+  }
+  
+  .nav-menu a {
+    font-size: 0.85rem;
+    padding: 8px 5px;
+    background: #f5f5f5;
+    border-radius: 5px;
+    display: block;
+    transition: all 0.3s;
+  }
+  
+  .nav-menu a:hover {
+    background: var(--primary);
+    color: white;
+  }
+  
+  /* 2. КАРУСЕЛЬ ДЛЯ ТЕЛЕФОНОВ (3 карточки горизонтально) */
+  .masters-section {
+    padding: 40px 0;
+  }
+  
+  .masters-carousel-wrapper {
+    padding: 0 10px !important;
+  }
+  
+  /* Скрываем стрелки на телефонах */
+  .carousel-btn {
+    display: none;
+  }
+  
+  .masters-carousel {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    border-radius: 10px;
+  }
+  
+  .masters-carousel::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .masters-carousel-track {
+    display: flex;
+    flex-wrap: nowrap;
+    transform: none !important;
+    gap: 10px;
+    padding: 10px;
+  }
+  
+  .carousel-slide {
+    display: flex;
+    flex: 0 0 auto;
+    min-height: auto;
+    padding: 0;
+    gap: 10px;
+    width: auto;
+  }
+  
+  /* Маленькие карточки для горизонтальной прокрутки */
+  .master-card-carousel {
+    flex: 0 0 280px;
+    width: 280px;
+    min-width: 280px;
+    max-width: 280px;
+    padding: 20px 15px;
+    margin: 0;
+  }
+  
+  .master-avatar {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+  }
+  
+  .master-card-carousel h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+  }
+  
+  .master-specialty {
+    font-size: 0.85rem;
+    padding: 5px 12px;
+    margin-bottom: 10px;
+  }
+  
+  .master-rating {
+    gap: 3px;
+  }
+  
+  .rating-value {
+    font-size: 1.1rem;
+  }
+  
+  .master-buttons {
+    gap: 8px;
+  }
+  
+  .master-card-carousel .btn {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+  
+  /* Скрываем точки на телефонах (скроллим пальцем) */
+  .carousel-dots {
+    display: none;
+  }
+  
+  /* 3. ОБЩАЯ АДАПТИВНОСТЬ */
+  h1 {
+    font-size: 1.8rem !important;
+  }
+  
+  h2 {
+    font-size: 1.6rem !important;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem !important;
+    margin-bottom: 30px;
+  }
+  
+  /* Секции */
+  section {
+    padding: 50px 0;
+  }
+  
+  /* Услуги - по одной в ряд */
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .service-card {
+    padding: 25px 20px;
+  }
+  
+  /* Портфолио - по одной карточке */
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  /* О нас - вертикальный стек */
+  .about-grid {
+    grid-template-columns: 1fr !important;
+    gap: 30px;
+  }
+  
+  /* Контакты - вертикальный стек */
+  .contacts-grid {
+    grid-template-columns: 1fr !important;
+    gap: 30px;
+  }
+  
+  /* Футер - вертикальный стек */
+  .footer .container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 30px;
+  }
+  
+  /* Уменьшаем кнопки */
+  .btn {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .hero-buttons .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* Для очень маленьких телефонов (до 480px) */
+@media (max-width: 480px) {
+  .master-card-carousel {
+    flex: 0 0 260px;
+    width: 260px;
+    min-width: 260px;
+    max-width: 260px;
+    padding: 15px 12px;
+  }
+  
+  .nav-menu ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .header-contact {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  
+  .phone {
+    font-size: 0.85rem;
+  }
+  
+  .header-contact .btn {
+    width: 100%;
+  }
+}
+  </style>
+</head>
+<body>
+
+<!-- ЛОГОТИП КОМПАНИИ В ЛЕВОМ ВЕРХНЕМ УГЛУ -->
+<header class="header">
+  <div class="container">
+    <div class="header-logo">
+      <div class="logo-top">KLiMATE</div>
+      <div class="logo-bottom">KOMFORT</div>
+    </div>
+    <nav class="nav-menu">
+      <ul>
+        <li><a href="#home">Главная</a></li>
+        <li><a href="#services">Услуги</a></li>
+        <li><a href="#about">О компании</a></li>
+        <li><a href="#portfolio">Портфолио</a></li>
+        <li><a href="#masters">Мастера</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+      </ul>
+    </nav>
+    <div class="header-contact">
+      <div class="phone"><i class="fas fa-phone"></i> <a href="tel:+79227448867">+7 (922) 744-88-67</a></div>
+      <button class="btn btn-primary" onclick="openModal('callback')">Заказать звонок</button>
+    </div>
+  </div>
+</header>
+
+<section id="home" class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1>Тепло зимой, прохладно летом в вашем доме и офисе</h1>
+      <p>Профессиональный монтаж и обслуживание систем отопления, кондиционирования и вентиляции в Ингушетии</p>
+      <div class="hero-features">
+        <div class="feature-item"><i class="fas fa-car-alt"></i><span>Бесплатный выезд и замер</span></div>
+        <div class="feature-item"><i class="fas fa-shield-alt"></i><span>Гарантия до 3-х лет</span></div>
+        <div class="feature-item"><i class="fas fa-users"></i><span>Опытные инженеры</span></div>
+        <div class="feature-item"><i class="fas fa-broom"></i><span>Чистый монтаж</span></div>
+      </div>
+      <div class="hero-buttons">
+        <button class="btn btn-primary" onclick="openModal('calculate')">Рассчитать стоимость</button>
+        <button class="btn btn-secondary" onclick="openModal('master')">Вызвать мастера</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="services">
+  <div class="container">
+    <h2>Наши услуги</h2>
+    <p class="section-subtitle">Полный комплекс услуг для создания идеального климата</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-fire"></i></div>
+        <h3>Отопление</h3>
+        <p>Газовые котлы, радиаторы, теплые полы — надежное тепло даже в сильные морозы.</p>
+        <button class="btn btn-outline" onclick="showServiceModal('Отопление', 'Монтаж газовых, электрических и твердотопливных котлов. Установка радиаторов и систем теплый пол. Проектирование котельных под ключ.')">Подробнее</button>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-snowflake"></i></div>
+        <h3>Кондиционирование</h3>
+        <p>Тишина, комфорт и чистый воздух — подберем и установим систему под ваш бюджет.</p>
+        <button class="btn btn-outline" onclick="showServiceModal('Кондиционирование', 'Установка сплит-систем, мульти-сплит, канальных, кассетных и VRV/VRF-систем. Продажа и монтаж от ведущих брендов: Daikin, Mitsubishi, Ballu.')">Подробнее</button>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-wind"></i></div>
+        <h3>Вентиляция</h3>
+        <p>Свежий воздух 24/7 — с рекуперацией, фильтрацией и автоматикой.</p>
+        <button class="btn btn-outline" onclick="showServiceModal('Вентиляция', 'Монтаж приточной, вытяжной и приточно-вытяжной вентиляции. Установка бризеров и рекуператоров от Tion, Vakio и других производителей.')">Подробнее</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<div class="menu-overlay" id="menuOverlay"></div>
+<section id="about" class="about">
+  <div class="container">
+    <h2>Почему выбирают нас</h2>
+    <div class="about-grid" style="display: grid; grid-template-columns: 1fr 2fr; gap: 40px; align-items: center;">
+      <div class="about-stats">
+        <div class="stat-item"><span style="font-size:2.5rem;font-weight:700;color:var(--primary);display:block;">10+</span><span>лет на рынке</span></div>
+        <div class="stat-item"><span style="font-size:2.5rem;font-weight:700;color:var(--primary);display:block;">1500+</span><span>проектов</span></div>
+        <div class="stat-item"><span style="font-size:2.5rem;font-weight:700;color:var(--primary);display:block;">36</span><span>мес. гарантии</span></div>
+      </div>
+      <div class="about-text">
+        <p>Мы делаем один простой продукт — <strong>комфорт</strong>. Без скрытых платежей, с фиксированной ценой и уборкой после себя.</p>
+        <ul style="margin-top:20px;">
+          <li style="margin-bottom:10px;"><i class="fas fa-check"></i> Официальный договор</li>
+          <li style="margin-bottom:10px;"><i class="fas fa-check"></i> Расчёт стоимости до начала работ</li>
+          <li style="margin-bottom:10px;"><i class="fas fa-check"></i> Только проверенные бренды: Daikin, Baxi, Mitsubishi, Ballu</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio" class="portfolio">
+  <div class="container">
+    <h2>Наши работы</h2>
+    <p class="section-subtitle">Реальные объекты, сданные "под ключ"</p>
+    <div class="portfolio-filters">
+      <button class="filter-btn active" data-filter="all">Все</button>
+      <button class="filter-btn" data-filter="apartment">Квартиры</button>
+      <button class="filter-btn" data-filter="house">Дома</button>
+      <button class="filter-btn" data-filter="office">Офисы</button>
+      <button class="menu-toggle" id="menuToggle">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+    </div>
+    <div class="portfolio-grid">
+      <div class="portfolio-item" data-category="apartment">
+        <img src="https://avatars.mds.yandex.net/i?id=dba494d55067749acd5cd8ee90ba0c1544f9364a-5194885-images-thumbs&n=13" alt="Квартира">
+        <h3>Квартира</h3>
+        <p>?</p>
+        <button class="btn btn-outline" onclick="showPortfolioModal('Квартира, 65 м²', 'пока ничего')">Подробнее</button>
+      </div>
+      <div class="portfolio-item" data-category="house">
+        <img src="https://avatars.mds.yandex.net/i?id=dba494d55067749acd5cd8ee90ba0c1544f9364a-5194885-images-thumbs&n=13" alt="Дом">
+        <h3>Дом</h3>
+        <p>?</p>
+        <button class="btn btn-outline" onclick="showPortfolioModal('Коттедж, 180 м²', 'пока ничего')">Подробнее</button>
+      </div>
+      <div class="portfolio-item" data-category="office">
+        <img src="https://avatars.mds.yandex.net/i?id=dba494d55067749acd5cd8ee90ba0c1544f9364a-5194885-images-thumbs&n=13" alt="Офис">
+        <h3>Офис, 120 м²</h3>
+        <p>?</p>
+        <button class="btn btn-outline" onclick="showPortfolioModal('Офис, 120 м²', 'пока ничего')">Подробнее</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- МАСТЕРА С КАРУСЕЛЬЮ (ПЕРЕПИСАНО) -->
+<section id="masters" class="masters-section">
+  <div class="container">
+    <h2>Наши мастера</h2>
+    <p class="section-subtitle">Специалисты с опытом от 5 лет. Оставьте отзыв о работе мастера!</p>
+    
+    <!-- Карусель мастеров -->
+    <div class="masters-carousel-wrapper">
+      <button class="carousel-btn carousel-btn-prev" onclick="prevSlide()">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      
+      <div class="masters-carousel">
+        <div class="masters-carousel-track" id="mastersCarouselTrack">
+          <!-- Карточки мастеров будут добавлены через JS -->
+        </div>
+      </div>
+      
+      <button class="carousel-btn carousel-btn-next" onclick="nextSlide()">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+    
+    <!-- Точки-индикаторы -->
+    <div class="carousel-dots" id="carouselDots">
+      <!-- Точки будут добавлены через JS -->
+    </div>
+  </div>
+</section>
+
+<section id="contacts" class="contacts">
+  <div class="container">
+    <h2>Свяжитесь с нами</h2>
+    <p class="section-subtitle">Готовы создать идеальный климат в вашем доме?</p>
+    <div class="contacts-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:50px;">
+      <div class="contacts-info">
+        <p><i class="fas fa-map-marker-alt"></i> г. Карабулак, ул. .., д. ..</p>
+        <p><i class="fas fa-phone"></i> <a href="tel:+78001234567" class="contact-phone">+7 (922) 744-88-67</a></p>
+        <p><i class="fas fa-envelope"></i> info@klimate-komfort.ru</p>
+        <p><i class="fas fa-clock"></i> Пн–Сб: 8:00–20:00</p>
+      </div>
+      <form id="contactForm" class="contact-form" style="display:flex;flex-direction:column;gap:15px;">
+        <input type="text" placeholder="Ваше имя" required style="padding:12px;border:1px solid var(--light-gray);border-radius:6px;">
+        <input type="tel" placeholder="Телефон" required style="padding:12px;border:1px solid var(--light-gray);border-radius:6px;">
+        <select required style="padding:12px;border:1px solid var(--light-gray);border-radius:6px;">
+          <option value="">Выберите услугу</option>
+          <option>Отопление</option>
+          <option>Кондиционирование</option>
+          <option>Вентиляция</option>
+          <option>Обслуживание</option>
+        </select>
+        <textarea placeholder="Сообщение" style="padding:12px;border:1px solid var(--light-gray);border-radius:6px;height:120px;"></textarea>
+        <button type="submit" class="btn btn-primary">Отправить заявку</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Модальные окна -->
+<div id="modalBackdrop" class="modal-backdrop" onclick="closeModal()">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<!-- Модальное окно для отзывов -->
+<div id="reviewModal" class="modal-backdrop" onclick="closeReviewModal()">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-btn" onclick="closeReviewModal()">&times;</span>
+    <div id="reviewModalBody"></div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-logo">
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='40' viewBox='0 0 140 40'%3E%3Crect width='140' height='40' fill='%231a73e8'/%3E%3Ctext x='50%25' y='55%25' font-family='Arial' font-size='14' fill='white' text-anchor='middle'%3EKLIMATE KOMFORT%3C/text%3E%3C/svg%3E" alt="KLIMATE KOMFORT">
+      <p>Создаём комфорт с 2015 года</p>
+    </div>
+    <div class="footer-links">
+      <a href="#home">Главная</a>
+      <a href="#services">Услуги</a>
+      <a href="#about">О нас</a>
+      <a href="#contacts">Контакты</a>
+    </div>
+    <div class="footer-social">
+      <a href="#"><i class="fab fa-vk"></i></a>
+      <a href="#"><i class="fab fa-telegram"></i></a>
+      <a href="#"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Klimate Komfort. Все права защищены.</p>
+    <p><a href="#" style="color:#aaa;text-decoration:none;">Политика конфиденциальности</a></p>
+  </div>
+</footer>
+
+<script>
+  // === ДАННЫЕ МАСТЕРОВ ===
+  const initialMasters = [
+    {
+      id: 1,
+      name: "Хамхоев Идрис",
+      specialty: "Специалист по отоплению",
+      avatar: "https://i.pinimg.com/originals/c6/00/f2/c600f276b3f7cafcd572402ac86e489b.jpg",
+      phone: "+7 (900) 111-22-33",
+      initialRating: 5,
+      reviews: [
+        {
+          id: 1,
+          author: "Лейла М.",
+          date: "2025-03-10",
+          rating: 5,
+          text: "Отличный мастер! Установил котёл быстро и качественно. Всё объяснил, показал как пользоваться."
+        },
+        {
+          id: 2,
+          author: "Ахмед С.",
+          date: "2025-03-12",
+          rating: 5,
+          text: "Хорошая работа, доволен."
+        }
+      ]
+    },
+    {
+      id: 2,
+      name: "Кастоев Амир",
+      specialty: "Специалист по кондиционированию",
+      avatar: "https://i.pinimg.com/originals/c6/00/f2/c600f276b3f7cafcd572402ac86e489b.jpg",
+      phone: "+7 (900) 222-33-44",
+      initialRating: 5,
+      reviews: [
+        {
+          id: 1,
+          author: "Марина К.",
+          date: "2025-08-11",
+          rating: 5,
+          text: "Установил кондиционер идеально! Тихий, работает отлично, спасибо!"
+        }
+      ]
+    },
+    {
+      id: 3,
+      name: "Даурбеков Мурад",
+      specialty: "Специалист по вентиляции",
+      avatar: "https://i.pinimg.com/originals/c6/00/f2/c600f276b3f7cafcd572402ac86e489b.jpg",
+      phone: "+7 (900) 333-44-55",
+      initialRating: 5,
+      reviews: [
+        {
+          id: 1,
+          author: "Ибрагим Л.",
+          date: "2025-03-08",
+          rating: 5,
+          text: "Сделал вентиляцию. Теперь воздух свежий, все довольны!"
+        }
+      ]
+    },
+    {
+      id: 4,
+      name: "Мальсагов Аслан",
+      specialty: "Теплые полы",
+      avatar: "https://i.pinimg.com/originals/c6/00/f2/c600f276b3f7cafcd572402ac86e489b.jpg",
+      phone: "+7 (900) 444-55-66",
+      initialRating: 5,
+      reviews: [
+        {
+          id: 1,
+          author: "Ася Т.",
+          date: "2025-02-15",
+          rating: 5,
+          text: "Установил теплые полы в ванной. Теперь зимой ходить босиком — одно удовольствие!"
+        }
+      ]
+    },
+    {
+      id: 5,
+      name: "Богатырев Руслан",
+      specialty: "Котельные системы",
+      avatar: "https://i.pinimg.com/originals/c6/00/f2/c600f276b3f7cafcd572402ac86e489b.jpg",
+      phone: "+7 (900) 555-66-77",
+      initialRating: 5,
+      reviews: [
+        {
+          id: 1,
+          author: "Сергей В.",
+          date: "2025-01-20",
+          rating: 5,
+          text: "Спроектировал и установил котельную. Всё работает безупречно!"
+        }
+      ]
+    },
+    {
+      id: 6,
+      name: "Эльдиев Башир",
+      specialty: "Мульти-сплит системы",
+      avatar: "https://i.pinimg.com/originals/c6/00/f2/c600f276b3f7cafcd572402ac86e489b.jpg",
+      phone: "+7 (900) 666-77-88",
+      initialRating: 5,
+      reviews: [
+        {
+          id: 1,
+          author: "Елена К.",
+          date: "2025-04-05",
+          rating: 5,
+          text: "Установил мульти-сплит систему в коттедже. Все комнаты охлаждаются идеально!"
+        }
+      ]
+    },
+    {
+      id: 7,
+      name: "Цечоев Иса",
+      specialty: "Обслуживание и ремонт",
+      avatar: "https://i.pinimg.com/originals/c6/00/f2/c600f276b3f7cafcd572402ac86e489b.jpg",
+      phone: "+7 (900) 777-88-99",
+      initialRating: 5,
+      reviews: [
+        {
+          id: 1,
+          author: "Виктор П.",
+          date: "2025-03-25",
+          rating: 5,
+          text: "Починил кондиционер за 30 минут! Профессионал своего дела."
+        }
+      ]
+    },
+    {
+      id: 8,
+      name: "Ханиев Магомед",
+      specialty: "Бризеры и рекуператоры",
+      avatar: "https://i.pinimg.com/originals/c6/00/f2/c600f276b3f7cafcd572402ac86e489b.jpg",
+      phone: "+7 (900) 888-99-00",
+      initialRating: 5,
+      reviews: [
+        {
+          id: 1,
+          author: "Анастасия Р.",
+          date: "2025-02-28",
+          rating: 5,
+          text: "Установил бризер в детской комнате. Ребёнок перестал болеть, воздух чистый!"
+        }
+      ]
+    },
+    {
+      id: 9,
+      name: "Аушев Адам",
+      specialty: "Автоматика и умный дом",
+      avatar: "https://i.pinimg.com/originals/c6/00/f2/c600f276b3f7cafcd572402ac86e489b.jpg",
+      phone: "+7 (900) 999-00-11",
+      initialRating: 5,
+      reviews: [
+        {
+          id: 1,
+          author: "Александр М.",
+          date: "2025-03-15",
+          rating: 5,
+          text: "Настроил умный дом для управления климатом. Всё работает через приложение, очень удобно!"
+        }
+      ]
+    },
+    {
+      id: 10,
+      name: "Кузьгов Исмаил",
+      specialty: "Дизайн-проекты",
+      avatar: "https://i.pinimg.com/originals/c6/00/f2/c600f276b3f7cafcd572402ac86e489b.jpg",
+      phone: "+7 (900) 111-00-22",
+      initialRating: 5,
+      reviews: [
+        {
+          id: 1,
+          author: "Светлана К.",
+          date: "2025-04-10",
+          rating: 5,
+          text: "Разработала дизайн-проект, где техника идеально вписалась в интерьер. Очень внимательна к деталям!"
+        }
+      ]
+    },
+    {
+      id: 11,
+      name: "Беков Султан",
+      specialty: "Проектирование и расчеты",
+      avatar: "https://i.pinimg.com/originals/c6/00/f2/c600f276b3f7cafcd572402ac86e489b.jpg",
+      phone: "+7 (900) 222-33-00",
+      initialRating: 5,
+      reviews: [
+        {
+          id: 1,
+          author: "Иван Г.",
+          date: "2025-03-22",
+          rating: 5,
+          text: "Создал точные расчёты и чертежи для сложной климатической системы. Профессионал высокого уровня!"
+        }
+      ]
+    }
+  ];
+
+  // === КАРУСЕЛЬ МАСТЕРОВ ===
+  let currentSlide = 0;
+  const slidesPerView = 3;
+  let mastersData = [];
+  let totalSlides = 0;
+  let autoSlideInterval;
+
+  // Загрузка данных
+  function loadMastersData() {
+    const saved = localStorage.getItem('klimateMastersReviews');
+    if (saved) {
+      return JSON.parse(saved);
+    }
+    return JSON.parse(JSON.stringify(initialMasters));
+  }
+
+  // Сохранение данных
+  function saveMastersData() {
+    localStorage.setItem('klimateMastersReviews', JSON.stringify(mastersData));
+  }
+
+  // Расчет рейтинга
+  function calculateAverageRating(master) {
+    if (master.reviews.length === 0) return master.initialRating;
+    const total = master.reviews.reduce((sum, review) => sum + review.rating, 0);
+    return (total / master.reviews.length).toFixed(1);
+  }
+
+  // Генерация звезд
+  function generateStars(rating) {
+    const numRating = parseFloat(rating);
+    let stars = '';
+    for (let i = 1; i <= 5; i++) {
+      if (i <= Math.floor(numRating)) {
+        stars += '<i class="fas fa-star" style="color: var(--star-color);"></i>';
+      } else {
+        stars += '<i class="far fa-star" style="color: #ddd;"></i>';
+      }
+    }
+    return stars;
+  }
+
+  // Слово для отзывов
+  function getReviewWord(count) {
+    if (count === 0) return 'ов';
+    if (count % 10 === 1 && count % 100 !== 11) return '';
+    if (count % 10 >= 2 && count % 10 <= 4 && (count % 100 < 10 || count % 100 >= 20)) return 'а';
+    return 'ов';
+  }
+
+  // Инициализация карусели
+  function initCarousel() {
+    const track = document.getElementById('mastersCarouselTrack');
+    const dotsContainer = document.getElementById('carouselDots');
+    
+    if (!track) {
+      console.error('Не найден элемент #mastersCarouselTrack');
+      return;
+    }
+    
+    mastersData = loadMastersData();
+    totalSlides = Math.ceil(mastersData.length / slidesPerView);
+    console.log(`Всего мастеров: ${mastersData.length}, слайдов: ${totalSlides}`);
+    
+    // Очищаем трек
+    track.innerHTML = '';
+    
+    // Создаем слайды
+    for (let i = 0; i < totalSlides; i++) {
+      const slide = document.createElement('div');
+      slide.className = 'carousel-slide';
+      
+      // Мастера для этого слайда
+      const startIndex = i * slidesPerView;
+      const endIndex = startIndex + slidesPerView;
+      const slideMasters = mastersData.slice(startIndex, endIndex);
+      
+      slideMasters.forEach(master => {
+        const avgRating = calculateAverageRating(master);
+        const reviewCount = master.reviews.length;
+        
+        const card = document.createElement('div');
+        card.className = 'master-card-carousel';
+        card.innerHTML = `
+          <div class="master-avatar">
+            <img src="${master.avatar}" alt="${master.name}" loading="lazy">
+          </div>
+          <h3>${master.name}</h3>
+          <div class="master-specialty">${master.specialty}</div>
+          
+          <div class="master-rating-container">
+            <div class="master-rating">
+              ${generateStars(avgRating)}
+              <span class="rating-value">${avgRating}</span>
+            </div>
+            <div class="review-count">${reviewCount} отзыв${getReviewWord(reviewCount)}</div>
+          </div>
+          
+          <div class="master-buttons">
+            <button class="btn btn-primary" onclick="openReviewModal(${master.id})">
+              <i class="fas fa-comment"></i> Оставить отзыв
+            </button>
+            <button class="btn btn-outline" onclick="showMasterReviews(${master.id})">
+              <i class="fas fa-eye"></i> Посмотреть
+            </button>
+          </div>
+          
+          <p class="master-phone">
+            <a href="tel:${master.phone}" class="phone-link">
+              <i class="fas fa-phone"></i> ${master.phone}
+            </a>
+          </p>
+        `;
+        
+        slide.appendChild(card);
+      });
+      
+      // Если в слайде меньше 3 карточек, добавляем пустые для выравнивания
+      while (slide.children.length < slidesPerView) {
+        const emptyCard = document.createElement('div');
+        emptyCard.className = 'master-card-carousel';
+        emptyCard.style.visibility = 'hidden';
+        slide.appendChild(emptyCard);
+      }
+      
+      track.appendChild(slide);
+    }
+    
+    // Создаем точки
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i < totalSlides; i++) {
+      const dot = document.createElement('span');
+      dot.className = `carousel-dot ${i === 0 ? 'active' : ''}`;
+      dot.addEventListener('click', () => goToSlide(i));
+      dotsContainer.appendChild(dot);
+    }
+    
+    updateCarousel();
+  }
+
+  function goToSlide(slideIndex) {
+    if (slideIndex < 0 || slideIndex >= totalSlides) return;
+    currentSlide = slideIndex;
+    updateCarousel();
+  }
+
+  function prevSlide() {
+    goToSlide(currentSlide - 1);
+  }
+
+  function nextSlide() {
+    goToSlide(currentSlide + 1);
+  }
+
+  function updateCarousel() {
+    const track = document.getElementById('mastersCarouselTrack');
+    const dots = document.querySelectorAll('.carousel-dot');
+    
+    if (!track) return;
+    
+    track.style.transform = `translateX(-${currentSlide * 100}%)`;
+    
+    dots.forEach((dot, index) => {
+      dot.classList.toggle('active', index === currentSlide);
+    });
+    
+    // Кнопки вперед/назад
+    const prevBtn = document.querySelector('.carousel-btn-prev');
+    const nextBtn = document.querySelector('.carousel-btn-next');
+    
+    if (prevBtn) prevBtn.style.opacity = currentSlide === 0 ? '0.5' : '1';
+    if (nextBtn) nextBtn.style.opacity = currentSlide === totalSlides - 1 ? '0.5' : '1';
+  }
+
+  // Автопрокрутка
+  function startAutoSlide() {
+    if (totalSlides <= 1) return;
+    stopAutoSlide();
+    autoSlideInterval = setInterval(() => {
+      const nextSlideIndex = (currentSlide + 1) % totalSlides;
+      goToSlide(nextSlideIndex);
+    }, 5000);
+  }
+  
+  function stopAutoSlide() {
+    if (autoSlideInterval) {
+      clearInterval(autoSlideInterval);
+      autoSlideInterval = null;
+    }
+  }
+
+  // === ФУНКЦИИ ДЛЯ ОТЗЫВОВ ===
+  let currentRating = 0;
+  let currentMasterId = null;
+
+  function openReviewModal(masterId) {
+    currentMasterId = masterId;
+    currentRating = 0;
+    
+    const master = mastersData.find(m => m.id === masterId);
+    if (!master) return;
+    
+    const modalContent = `
+      <div class="review-modal" style="padding: 30px; max-width: 500px;">
+        <h2 style="margin-bottom: 20px;">Оставить отзыв о мастере</h2>
+        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 25px;">
+          <img src="${master.avatar}" alt="${master.name}" style="width: 60px; height: 60px; border-radius: 50%;">
+          <div>
+            <h3 style="margin: 0;">${master.name}</h3>
+            <p style="margin: 5px 0 0; color: #666;">${master.specialty}</p>
+          </div>
+        </div>
+        
+        <form id="reviewForm" style="display: flex; flex-direction: column; gap: 20px;">
+          <div>
+            <label style="display: block; margin-bottom: 8px; font-weight: 600;">Ваше имя</label>
+            <input type="text" id="reviewAuthor" required 
+                   style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px;">
+          </div>
+          
+          <div>
+            <label style="display: block; margin-bottom: 8px; font-weight: 600;">Ваша оценка</label>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <div id="ratingStars" style="font-size: 24px;">
+                ${[1,2,3,4,5].map(i => `
+                  <i class="far fa-star rating-star" 
+                     data-rating="${i}"
+                     style="cursor: pointer; color: #ddd;"
+                     onmouseover="hoverRating(this)"
+                     onmouseout="resetRating()"
+                     onclick="selectRating(${i})"></i>
+                `).join('')}
+              </div>
+              <span id="ratingText" style="font-size: 16px; color: #666;">0 из 5</span>
+            </div>
+          </div>
+          
+          <div>
+            <label style="display: block; margin-bottom: 8px; font-weight: 600;">Ваш отзыв</label>
+            <textarea id="reviewText" required rows="4"
+                      style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; resize: vertical;"></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-primary" style="padding: 12px; font-size: 16px;">
+            <i class="fas fa-paper-plane"></i> Отправить отзыв
+          </button>
+        </form>
+      </div>
+    `;
+    
+    const reviewModal = document.getElementById('reviewModal');
+    if (!reviewModal) return;
+    
+    document.getElementById('reviewModalBody').innerHTML = modalContent;
+    reviewModal.classList.add('active');
+    
+    // Обработка формы
+    document.getElementById('reviewForm').onsubmit = function(e) {
+      e.preventDefault();
+      submitReview();
+    };
+  }
+
+  function closeReviewModal() {
+    document.getElementById('reviewModal').classList.remove('active');
+    currentRating = 0;
+    currentMasterId = null;
+  }
+
+  function hoverRating(star) {
+    const rating = parseInt(star.dataset.rating);
+    const stars = document.querySelectorAll('.rating-star');
+    stars.forEach((s, index) => {
+      s.className = index < rating ? 'fas fa-star' : 'far fa-star';
+      s.style.color = index < rating ? 'var(--star-color)' : '#ddd';
+    });
+    document.getElementById('ratingText').textContent = `${rating} из 5`;
+  }
+
+  function resetRating() {
+    const stars = document.querySelectorAll('.rating-star');
+    stars.forEach((s, index) => {
+      s.className = index < currentRating ? 'fas fa-star' : 'far fa-star';
+      s.style.color = index < currentRating ? 'var(--star-color)' : '#ddd';
+    });
+    document.getElementById('ratingText').textContent = `${currentRating} из 5`;
+  }
+
+  function selectRating(rating) {
+    currentRating = rating;
+    resetRating();
+  }
+
+  function submitReview() {
+    const author = document.getElementById('reviewAuthor').value.trim();
+    const text = document.getElementById('reviewText').value.trim();
+    
+    if (currentRating === 0) {
+      alert('Пожалуйста, поставьте оценку');
+      return;
+    }
+    
+    if (!author || !text) {
+      alert('Пожалуйста, заполните все поля');
+      return;
+    }
+    
+    const master = mastersData.find(m => m.id === currentMasterId);
+    if (master) {
+      master.reviews.push({
+        id: Date.now(),
+        author: author,
+        date: new Date().toLocaleDateString('ru-RU'),
+        rating: currentRating,
+        text: text
+      });
+      
+      saveMastersData();
+      initCarousel(); // Перезагружаем карусель
+      closeReviewModal();
+      alert('Спасибо за ваш отзыв!');
+    }
+  }
+
+  function showMasterReviews(masterId) {
+    const master = mastersData.find(m => m.id === masterId);
+    if (!master) return;
+    
+    const avgRating = calculateAverageRating(master);
+    const reviewCount = master.reviews.length;
+    
+    let reviewsHtml = '';
+    if (reviewCount > 0) {
+      reviewsHtml = master.reviews.map(review => `
+        <div style="border-bottom: 1px solid #eee; padding: 15px 0;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+            <strong>${review.author}</strong>
+            <span style="color: #666;">${review.date}</span>
+          </div>
+          <div style="color: var(--star-color); margin-bottom: 8px;">
+            ${generateStars(review.rating)}
+          </div>
+          <p style="margin: 0; color: #333;">${review.text}</p>
+        </div>
+      `).join('');
+    } else {
+      reviewsHtml = '<p style="text-align: center; color: #666;">Пока нет отзывов. Будьте первым!</p>';
+    }
+    
+    const modalContent = `
+      <div style="padding: 30px; max-width: 600px; max-height: 80vh; overflow-y: auto;">
+        <h2 style="margin-bottom: 20px;">Отзывы о мастере</h2>
+        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 2px solid #eee;">
+          <img src="${master.avatar}" alt="${master.name}" style="width: 80px; height: 80px; border-radius: 50%;">
+          <div>
+            <h3 style="margin: 0;">${master.name}</h3>
+            <p style="margin: 5px 0; color: #666;">${master.specialty}</p>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span style="font-size: 24px; font-weight: bold;">${avgRating}</span>
+              <div style="color: var(--star-color); font-size: 18px;">
+                ${generateStars(avgRating)}
+              </div>
+              <span style="color: #666;">(${reviewCount} отзыв${getReviewWord(reviewCount)})</span>
+            </div>
+          </div>
+        </div>
+        
+        <h3 style="margin-bottom: 15px;">Все отзывы:</h3>
+        <div>
+          ${reviewsHtml}
+        </div>
+        
+        <button class="btn btn-primary" onclick="openReviewModal(${masterId})" 
+                style="margin-top: 25px; padding: 12px 24px; width: 100%;">
+          <i class="fas fa-comment"></i> Оставить свой отзыв
+        </button>
+      </div>
+    `;
+    
+    document.getElementById('reviewModalBody').innerHTML = modalContent;
+    document.getElementById('reviewModal').classList.add('active');
+  }
+
+  function resetAllReviews() {
+    if (confirm('Удалить ВСЕ отзывы для ВСЕХ мастеров?')) {
+      localStorage.removeItem('klimateMastersReviews');
+      mastersData = JSON.parse(JSON.stringify(initialMasters));
+      initCarousel();
+      alert('Все отзывы удалены!');
+    }
+  }
+
+  // === ИНИЦИАЛИЗАЦИЯ ===
+  document.addEventListener('DOMContentLoaded', function() {
+    // Инициализируем карусель
+    initCarousel();
+    
+    // Автопрокрутка
+    startAutoSlide();
+    
+    // Останавливаем автопрокрутку при наведении
+    const carouselWrapper = document.querySelector('.masters-carousel-wrapper');
+    if (carouselWrapper) {
+      carouselWrapper.addEventListener('mouseenter', stopAutoSlide);
+      carouselWrapper.addEventListener('mouseleave', startAutoSlide);
+    }
+    
+    // Закрытие модалки для отзывов по клику на фон
+    document.getElementById('reviewModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeReviewModal();
+      }
+    });
+    
+    // Закрытие модалок по Escape
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeModal();
+        closeReviewModal();
+      }
+    });
+    
+    // Плавная прокрутка для якорей
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        if (this.getAttribute('href') === '#') return;
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          window.scrollTo({
+            top: target.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  });
+
+  // Экспорт функций в глобальную область
+  window.openReviewModal = openReviewModal;
+  window.closeReviewModal = closeReviewModal;
+  window.showMasterReviews = showMasterReviews;
+  window.resetAllReviews = resetAllReviews;
+  window.hoverRating = hoverRating;
+  window.resetRating = resetRating;
+  window.selectRating = selectRating;
+  window.prevSlide = prevSlide;
+  window.nextSlide = nextSlide;
+  window.goToSlide = goToSlide;
+
+  // === СТАРЫЕ ФУНКЦИИ МОДАЛЬНЫХ ОКОН (сохраняем) ===
+  function openModal(type) {
+    const modal = document.getElementById('modalBackdrop');
+    const body = document.getElementById('modalBody');
+    let content = '';
+
+    switch(type) {
+      case 'calculate':
+        content = `
+          <h2>Рассчитать стоимость</h2>
+          <form id="calcForm" style="display:flex;flex-direction:column;gap:15px;margin-top:20px;">
+            <select required style="padding:10px;border:1px solid #ddd;border-radius:6px;">
+              <option value="">Выберите услугу</option>
+              <option>Отопление</option>
+              <option>Кондиционирование</option>
+              <option>Вентиляция</option>
+            </select>
+            <input type="number" placeholder="Площадь помещения (м²)" min="10" required style="padding:10px;border:1px solid #ddd;border-radius:6px;">
+            <input type="tel" placeholder="Ваш телефон" required style="padding:10px;border:1px solid #ddd;border-radius:6px;">
+            <button type="submit" class="btn btn-primary" style="width:100%;padding:12px;">Получить расчёт</button>
+          </form>
+        `;
+        break;
+      case 'master':
+        content = `
+          <h2>Вызвать мастера</h2>
+          <form id="masterForm" style="display:flex;flex-direction:column;gap:15px;margin-top:20px;">
+            <input type="text" placeholder="Ваше имя" required style="padding:10px;border:1px solid #ddd;border-radius:6px;">
+            <input type="tel" placeholder="Телефон" required style="padding:10px;border:1px solid #ddd;border-radius:6px;">
+            <textarea placeholder="Адрес и описание проблемы" style="padding:10px;border:1px solid #ddd;border-radius:6px;height:100px;"></textarea>
+            <button type="submit" class="btn btn-primary" style="width:100%;padding:12px;">Вызвать</button>
+          </form>
+        `;
+        break;
+      case 'callback':
+        content = `
+          <h2>Заказать звонок</h2>
+          <form id="callbackForm" style="display:flex;flex-direction:column;gap:15px;margin-top:20px;">
+            <input type="text" placeholder="Ваше имя" required style="padding:10px;border:1px solid #ddd;border-radius:6px;">
+            <input type="tel" placeholder="Телефон" required style="padding:10px;border:1px solid #ddd;border-radius:6px;">
+            <button type="submit" class="btn btn-primary" style="width:100%;padding:12px;">Перезвоните мне</button>
+          </form>
+        `;
+        break;
+    }
+
+    body.innerHTML = content;
+    modal.classList.add('active');
+
+    // Обработка форм
+    const form = body.querySelector('form');
+    if (form) {
+      form.onsubmit = function(e) {
+        e.preventDefault();
+        alert('✅ Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.');
+        closeModal();
+      };
+    }
+  }
+
+  function closeModal() {
+    document.getElementById('modalBackdrop').classList.remove('active');
+  }
+
+  function showServiceModal(title, description) {
+    const modal = document.getElementById('modalBackdrop');
+    const body = document.getElementById('modalBody');
+    body.innerHTML = `
+      <h2>${title}</h2>
+      <p style="margin:20px 0;">${description}</p>
+      <button class="btn btn-primary" onclick="openModal('calculate')" style="width:100%;padding:12px;">Заказать услугу</button>
+    `;
+    modal.classList.add('active');
+  }
+
+  function showPortfolioModal(title, description) {
+    const modal = document.getElementById('modalBackdrop');
+    const body = document.getElementById('modalBody');
+    body.innerHTML = `
+      <h2>${title}</h2>
+      <p style="margin:20px 0;">${description}</p>
+      <button class="btn btn-primary" onclick="openModal('calculate')" style="width:100%;padding:12px;">Рассчитать свой проект</button>
+    `;
+    modal.classList.add('active');
+  }
+
+  // === ФИЛЬТРЫ ПОРТФОЛИО ===
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.dataset.filter;
+      document.querySelectorAll('.portfolio-item').forEach(item => {
+        if (filter === 'all' || item.dataset.category === filter) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // === ОТПРАВКА КОНТАКТНОЙ ФОРМЫ ===
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('✅ Спасибо за заявку! Мы скоро свяжемся с вами.');
+    this.reset();
+  });
+</script>
+
+<!-- Кнопка для сброса отзывов (можно убрать в боевой версии) -->
+<div style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
+  <button onclick="resetAllReviews()" style="background: #dc3545; color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; font-size: 0.8rem; opacity: 0.7;">
+    <i class="fas fa-trash"></i> Сбросить отзывы
+  </button>
+</div>
+</body>
+</html>
